@@ -1,0 +1,430 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: var(--font1);
+}
+
+/* Paleta de Cores */
+:root {
+    --font1: "Lexend", sans-serif;
+    --font2: "Montserrat", sans-serif;
+    --font3: "Inter", sans-serif;
+    --font4: "Inclusive Sans", sans-serif;
+    --cor1: #336556;
+    --cor2: #FEF7EA;
+    --cor3: #8B5F3C;
+}
+
+/*Notebook*/
+@media screen and (max-width: 1400px) {
+    header {
+        height: 89px;
+        background-color: var(--cor1);
+    }
+    
+    #logo {
+        padding-top: 15px;
+        width: 257px;
+        margin: auto;
+    }
+
+    #logoshop {
+        margin: auto;
+        width: 160px;
+    }
+
+    #imglogoshop {
+        padding-top: 10px;
+        margin: auto;
+        width: 131px;
+        height: 70px;
+    }
+    
+    /* Menu Hamburguinho*/
+    .menu{
+        display: none;
+        float:right;
+        border: none;
+        margin-bottom: 35px;
+    }
+    
+    #menu {
+        margin-left: 5px;
+        display: block;
+    }
+    
+    .ul, .li{
+        margin:0;
+        padding:0;
+        list-style:none;
+    }
+    
+    .li{
+        float:left;
+        padding-top: 35px;
+        padding-right: 10px;
+        line-height: 20px;
+        font-size: 14px;
+        cursor:pointer;
+    }
+
+    .menushop {
+        padding-top: 5px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .linkshop {
+        line-height: 20px;
+        padding-right: 10px;
+        font-size: 14px;
+    }
+
+    .menuloja {
+        background-color: #336556;
+        height: 35px;
+    }
+
+    .ulshop, .lishop{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    
+    .lishop{
+        text-align: center;
+        padding-right: 10px;
+        line-height: 20px;
+        font-size: 14px;
+        cursor:pointer;
+    }
+    
+    .botao {
+        margin-top: 35px;
+        margin-right: 10px;
+        float: right;
+    }
+    
+    .botao > a {
+        color: var(--cor2);
+        text-decoration: none;
+    }
+    
+    #carrinho {
+        float: left;
+        font-size: 23px;
+        padding-top: 10px;
+        margin-right: 26px;
+        padding-bottom: 20px;
+    }
+    
+    #logar {
+        padding: 10px;
+        padding-left: 12px;
+        padding-right: 12px;
+        background-color: var(--cor2);
+        color: var(--cor1);
+        border-radius: 7px;
+        border: 0.5px solid var(--cor2);
+    }
+    
+    #logar:hover {
+        transition: 0.4s;
+        background-color: var(--cor1);
+        color: var(--cor2);
+        border: 0.5px solid var(--cor2);
+    }
+    
+    #criar:hover {
+        transition: 1s;
+        color: #ffe3af;
+    }
+    
+    #link {
+        color: var(--cor2);
+        text-decoration: none;
+    }
+
+    #linkpremium {
+        color: #ffe082;
+        text-decoration: none;
+    }
+    
+    #link:hover {
+        transition: 0.2s;
+        color: #ffe3af;
+    }
+    
+    header > menu > ul > li > a {
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 40px;
+    }
+    
+    header > menu > ul > li > a:hover {
+        text-decoration: none;
+        color: #c0a87d;
+    }
+    
+    footer {
+        border-top: 2px solid black;
+        background-color: var(--cor1);
+        width: 1343px;
+        height: 185px;
+    } 
+    
+    #apps {
+        margin: 10px;
+        margin-top: 35px;
+    }
+    
+    #extras, .extras {
+        margin-left: 7px;
+        font-size: 1.1em;
+        color: var(--cor2);
+    }
+    
+    .extras {
+        text-decoration: none;
+    }
+    
+    .extras:hover {
+        transition: 0.3s;
+        color: rgb(119, 190, 140);
+    }
+    
+    #copyright {
+        margin-top: 7px;
+        margin-left: 15px;
+        color: rgb(184, 184, 184);
+    }
+    
+    #mini {
+        float: right;
+        margin-right: 20px;
+        margin-top: 35px;
+    }
+}
+
+/*PC*/
+@media screen and (min-width: 1900px) {
+    header {
+        height: 125px;
+        background-color: var(--cor1);
+    }
+    
+    #logo {
+        padding-top: 15px;
+        width: 257px;
+        margin: auto;
+    }
+
+    #imglogo {
+        width: 256px;
+        height: 98px;
+    }
+
+    #logoshop {
+        margin: auto;
+        width: 183px;
+    }
+
+    #imglogoshop {
+        padding-top: 10px;
+        margin: auto;
+        width: 169px;
+        height: 91px;
+    }
+
+    #usuario1 {
+        font-size: 33px;
+        margin-right: 10px;
+    }
+    
+    /* Menu Hamburguinho*/
+    .menu{
+        display: none;
+        float:right;
+        border: none;
+        margin-bottom: 100px;
+    }
+    
+    #menu {
+        margin-left: 10px;
+        display: block;
+    }
+    
+    .ul, .li{
+        margin:0;
+        padding:0;
+        list-style:none;
+    }
+    
+    .li{
+        float:left;
+        padding-top: 50px;
+        padding-right: 10px;
+        line-height: 20px;
+        font-size: 19px;
+        cursor:pointer;
+    }
+
+    .menushop {
+        padding-top: 5px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .linkshop {
+        line-height: 20px;
+        padding-right: 10px;
+        font-size: 14px;
+    }
+
+    .menuloja {
+        background-color: #336556;
+        height: 43px;
+    }
+
+    .ulshop, .lishop{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    
+    .lishop{
+        text-align: center;
+        padding-right: 10px;
+        line-height: 20px;
+        font-size: 14px;
+        cursor:pointer;
+    }
+    
+    .botao {
+        margin-top: 50px;
+        margin-right: 10px;
+        float: right;
+    }
+    
+    .botao > a {
+        color: var(--cor2);
+        text-decoration: none;
+    }
+    
+    #carrinho {
+        float: left;
+        font-size: 23px;
+        padding-top: 10px;
+        margin-right: 26px;
+        padding-bottom: 20px;
+    }
+    
+    #logar {
+        padding: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+        background-color: var(--cor2);
+        color: var(--cor1);
+        border-radius: 7px;
+        border: 0.5px solid var(--cor2);
+        font-size: 22px;
+    }
+    
+    #logar:hover {
+        transition: 0.4s;
+        background-color: var(--cor1);
+        color: var(--cor2);
+        border: 0.5px solid var(--cor2);
+    }
+
+    #criar {
+        font-size: 20px;
+    }
+    
+    #criar:hover {
+        transition: 1s;
+        color: #ffe3af;
+    }
+    
+    #link {
+        color: var(--cor2);
+        text-decoration: none;
+        font-size: 21px;
+    }
+    
+    #link:hover {
+        transition: 0.2s;
+        color: #ffe3af;
+    }
+
+    #linkpremium {
+        font-size: 21px;
+        color: #ffe082;
+        text-decoration: none;
+    }
+    
+    header > menu > ul > li > a {
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 40px;
+    }
+    
+    header > menu > ul > li > a:hover {
+        text-decoration: none;
+        color: #c0a87d;
+    }
+
+    /*Rodapé*/
+    footer {
+        border-top: 2px solid black;
+        background-color: var(--cor1);
+        width: 1920px;
+        height: 210px;
+    } 
+    
+    #apps {
+        margin: 7px;
+        margin-top: 45px;
+        margin-left: 20px;
+    }
+    
+    #extras, .extras {
+        margin-left: 12px;
+        font-size: 1.2em;
+        color: var(--cor2);
+    }
+    
+    .extras {
+        text-decoration: none;
+    }
+    
+    .extras:hover {
+        transition: 0.3s;
+        color: rgb(119, 190, 140);
+    }
+    
+    #copyright {
+        margin-top: 7px;
+        margin-left: 22px;
+        font-size: 0.8em;
+        color: rgb(184, 184, 184);
+    }
+    
+    #mini {
+        float: right;
+        margin-right: 40px;
+        margin-top: 50px;
+    }
+}

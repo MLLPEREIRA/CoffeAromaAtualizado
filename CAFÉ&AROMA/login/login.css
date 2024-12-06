@@ -1,0 +1,99 @@
+@media screen and (min-width: 1900px) {
+    body {
+        background-image: image-set("../image/cadastro-login/login(grande).jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 950px;
+    }
+    
+    img {
+        margin-top: 99px;
+        margin-bottom: 25px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .formulario {
+        height: 490px;
+        margin: auto;
+        text-align: center;
+        background-color: var(--cor2);
+        margin-top: 200px;
+        color: var(--color1);
+        width: 418px;
+        border-radius: 7px;
+    }
+    
+    h3 {
+        color: var(--cor1);
+        margin-bottom: 10px;
+    }
+    
+    input {
+        border: 1px solid var(--cor1);
+        border-radius: 4px;
+    }
+    
+    input::placeholder {
+        padding-left: 10px;
+    }
+    
+    input, label {
+        margin-top: 5px;
+        color: var(--cor1);
+        font-size: 0.8em;
+    }
+    
+    .input {
+        width: 200px;
+        height: 25px;
+    }
+    
+    .entrar {
+        margin-top: 10px;
+        width: 200px;
+        margin: auto;
+    }
+    
+    .login-social {
+        float: left;
+    }
+    
+    .botao-login {
+        margin: 2px;
+        width: 100px;
+        height: 25px;
+    }
+    
+    #ou{
+        margin-top: 0;
+    }
+    
+    input[type=submit] {
+        float: right;
+        text-align: left;
+        padding: 10px;
+        padding-left: 14px;
+        padding-right: 14px;
+        background-color: var(--cor1);
+        color: var(--cor2);
+    }
+    
+    input[type=submit]:hover {
+        transition: 0.6s;
+        background-color: #24443a;
+        color: rgb(255, 255, 255);
+    }
+    
+    #cadastro {
+        color: var(--cor1);
+        font-size: 0.45em;
+    }
+    
+    #cadastro:hover {
+        color: #274b40;
+        text-decoration: underline;
+    }
+}

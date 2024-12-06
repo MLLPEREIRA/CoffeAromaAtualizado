@@ -1,0 +1,256 @@
+<?php 
+if(isset($_POST['submit']) && !empty($_POST['email'])  && !empty($_POST['senha']) )
+{
+  //acessa
+  include_once('config.php');//chama o config local onde o banco esta ligado
+  $email = $_POST['email'];
+  $senha = $_POST['senha'];
+  // este comentario de baixo é um codigo opcional onde você testa se ele consegue puxar as informações utilize ele somente se quiser realmente testar caso contrario não tem utilidade
+  
+   //print_r('email: . $email);   
+  //print_r('<br>');
+  //print_r('Senha: ' . $senha);
+
+  $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'"; //seleciona a tabela usuarios e procura email e senha que é igual a sua versão com $
+
+  $result = $conexao->query($sql); 
+
+  if(mysqli_num_rows($result) <1) //caso resultado de errado volta a login caso tenha mais de 1 letra no banco ou seja tenha informações no banco ele redireciona para a loja.html
+  {
+    header('location: ../login/login.html');
+  }
+  else{
+    header('location: ../cadastro/cadastro.html');
+  }
+
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOJA - CAFÉ & AROMA</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <header>
+        <ul class="ul">
+            <li class="li"><i id="menu" class="material-icons" onclick="clickMenu()" style="color: var(--cor2); font-size: 25px;">menu</i></li>
+            <li class="li"><a href="shop.html" id="link">HOME</a></li>
+            <li class="li"><a href="#" id="link">CARRINHO</a></li>
+        </ul>
+        <menu></menu>
+        <div class="botao">
+        <i class="material-icons" style="color: white;" id="usuario1">account_circle</i>
+        </div>
+        <div id="logoshop">
+            <a href="shop.html"><img src="../image/logos/logo-shop.png" width="160" height="65" id="imglogoshop"></a>
+        </div>
+    </header>
+    <div class="menuloja">
+        <p class="menushop"><a href="" class="linkshop" id="link">Pó de café</a> <a href="" class="linkshop" id="link">Grãos</a><a href="" class="linkshop" id="link">Cápsulas</a><a href="" class="linkshop" id="link">Máquinas</a><a href="" class="linkshop" id="link">Personalização</a><a href="" class="linkshop" id="link">Cosméticos</a><a href="" class="linkshop" id="link">Itens</a><a href="" class="linkshop" id="linkpremium">Premium</a></p>
+    </div>
+    <main>
+        <div id="container">
+                <img src="../image/shop/1.png" class="ativa" id="car-img">
+                <img src="../image/shop/2.png" id="car-img">
+                <img src="../image/shop/3.png" id="car-img">
+        </div>
+        <div class="mais-vendidos">
+            <h4>MAIS VENDIDOS</h4>
+            <br><br>
+            <div class="produtos-mv">
+                <div>
+                    <a href="produto1-mv/teste-produto1.html" id="link-for-test"><div id="pdt1-mv">
+                        <div id="img-pdt1-mv">
+                            <img src="../image/shop/produto1.png" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Máquina CAFÉ&AROMA MINI GC-1</h5>
+                        <h5><del>R$499</del> R$219</h5>
+                    </div></a>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/produto2.webp" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Café 3 Corações Premium 500G</h5>
+                        <h5><del>R$48</del> R$32</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/produto3.webp" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Café Baggio 250G</h5>
+                        <h5><del>R$38</del> R$25</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/produto4.png" alt="" width="160" height="160" id="img-produto">
+                        </div>
+                        <h5>Coador de Café de Metal</h5>
+                        <h5>R$35,90</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/produto5.png" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Cafeteira Espresso TRES AROMAS</h5>
+                        <h5><del>R$440,90</del> R$380,90</h5>
+                    </div>
+                </div> <!--Fim div-->
+            </div> <!--Fim div produtos mais vendidos-->
+        </div> <!--Fim div mais vendidos-->
+
+
+        <div class="top-maquinas">
+            <h4>TOP 10 - MÁQUINAS</h4>
+            <br><br>
+            <div class="produtos-tm">
+                <div>
+                    <div id="pdt1-mv">
+                        <div id="img-pdt1-mv">
+                            <img src="../image/shop/produto1.png" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Máquina CAFÉ&AROMA MINI GC-1</h5>
+                        <h5><del>R$499</del> R$219</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/maquina1.webp" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Máquina Automática S27 Pop Plus</h5>
+                        <h5><del>R$350</del>R$280</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/maquina3.webp" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Máquina Tres G2 touch 220V</h5>
+                        <h5><del>R$450</del> R$375</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/maquina4.avif" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Máquina 3 AROMAS GESTOS</h5>
+                        <h5><del>R$280</del> R$230</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/produto5.png" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Cafeteira 3 AROMAS EXPRESS</h5>
+                        <h5><del>R$440,90</del> R$380,90</h5>
+                    </div>
+                </div> <!--Fim div-->
+            </div> <!--Fim div produtos top 10 maquinas-->
+        </div> <!--Fim div top 10 maquinas-->
+
+        <div class="top-capsulas">
+            <h4>TOP 10 - CÁPSULAS</h4>
+            <br><br>
+            <div class="produtos-tc">
+                <div>
+                    <div id="pdt1-mv">
+                        <div id="img-pdt1-mv">
+                            <img src="../image/shop/capsula1.png" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>10 Capsulas de Café 3 AROMAS</h5>
+                        <h5><del>R$23,90</del> R$17,90</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/capsula2.webp" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>10 Capsulas de Mochaccino Canela</h5>
+                        <h5><del>R$24,90</del> R$19,99</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/capsula3.png" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>10 Capsulas de Café com Leite</h5>
+                        <h5><del>R$20</del> R$14,90</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/capsula4.webp" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>10 Cápsulas de Café com Chocolate</h5>
+                        <h5><del>29,90</del> R$21,90</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/capsula5.png" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Café Pilão 10 Capsulas</h5>
+                        <h5><del>R$29,99</del> R$20,99</h5>
+                    </div>
+                </div> <!--Fim div-->
+            </div> <!--Fim div produtos top 10 cafes-->
+        </div> <!--Fim div top 10 cafes-->
+
+        <div class="top-pos">
+            <h4>TOP 10 - PÓS E GRÃOS</h4>
+            <br><br>
+            <div class="produtos-tp">
+                <div>
+                    <div id="pdt1-mv">
+                        <div id="img-pdt1-mv">
+                            <img src="../image/shop/produto2.webp" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Café 3 AROMAS Premium 500G</h5>
+                        <h5><del>R$48</del> R$32</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/produto3.webp" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Café Baggio 250G</h5>
+                        <h5><del>R$38</del> R$25</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/grao3.webp" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Cáfe em Grãos-Superior</h5>
+                        <h5><del>R$32,99</del> R$22</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/grao4.webp" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Café em Grãos Torrados Pilão</h5>
+                        <h5><del>R$28,99</del> R$20</h5>
+                    </div>
+                    <div id="pdt2-mv">
+                        <div id="img-pdt2-mv">
+                            <img src="../image/shop/grão5.webp" alt="" width="150" height="150" id="img-produto">
+                        </div>
+                        <h5>Café Gourmet Jaguari</h5>
+                        <h5><del>R$35</del>24,90</h5>
+                    </div>
+                </div> <!--Fim div-->
+            </div> <!--Fim div produtos top 10 pos-->
+        </div> <!--Fim div top 10 pos-->
+
+    <div class="area-premium">
+        <img src="../image/shop/logo-premium.png" alt="" width="222" height="78">
+        <h2 id="text-premium">Sua paixão por café merece um toque a mais.<br>Descubra o sabor da excelência, descubra o melhor <br>que temos a oferecer. Para você.</h2><br>
+        <a href="" id="seja-premium">Seja Premium</a> <a href="" id="planos-premium">Ver planos</a>
+    </div>
+    </main>
+
+    <footer style="border: none;">
+        <img src="../image/miniatura.png" alt="" id="mini">
+        <img src="../image/midias.png" alt="" id="apps">
+        <p id="extras"><strong><a href="" class="extras">Termos de uso</a> |<a href="" class="extras">Política de Privacidade</a> |<a href="" class="extras">Política de Cookies</a></strong></p>
+        <h5 id="copyright">2024 - <i class="material-icons" style="font-size: 0.94em;">copyright</i>CAFÉ E AROMA. Todos os direiros reservados.</h5>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
+
